@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="MatHeat: Generate advanced gene expression heatmaps with clustering and Reactome pathway analysis. A bioinformatics tool by Seyyed Amin Seyyed Rezaei.">
+    <meta name="keywords" content="MatHeat, gene expression, heatmap generator, bioinformatics, clustering, UMAP, KMeans, Reactome, Python">
+    <meta name="author" content="Seyyed Amin Seyyed Rezaei">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MatHeat: Gene Expression Heatmap Generator">
+    <meta property="og:description" content="Upload your gene expression data and create interactive heatmaps with advanced bioinformatics tools.">
+    <meta property="og:image" content="https://via.placeholder.com/800x400.png?text=MatHeat+Preview">
+    <meta property="og:url" content="https://yourusername.github.io/matheat-landing">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MatHeat: Gene Expression Heatmap Generator">
+    <meta name="twitter:description" content="Explore gene expression data with MatHeat's cutting-edge tools.">
+    <meta name="twitter:image" content="https://via.placeholder.com/800x400.png?text=MatHeat+Preview">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8FDLQQB');</script>
+    <!-- End Google Tag Manager -->
+    <title>MatHeat: Gene Expression Heatmap Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature h3 {
+            color: #2c3e50;
+        }
+        img.preview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8FDLQQB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <h1>MatHeat</h1>
+        <p>Advanced Gene Expression Heatmap Generator</p>
+    </header>
+
+    <div class="container">
+        <p>
+            Welcome to MatHeat, a cutting-edge bioinformatics tool developed by Seyyed Amin Seyyed Rezaei. 
+            Upload your gene expression data (CSV, TSV, XLSX, H5/HDF5, JSON) and explore interactive heatmaps 
+            with clustering (KMeans, UMAP) and Reactome pathway analysis.
+        </p>
+        <a href="https://matheat.streamlit.app" target="_blank" class="btn">Launch MatHeat App</a>
+
+        <!-- Preview Image -->
+        <img src="https://via.placeholder.com/800x400.png?text=MatHeat+Heatmap+Preview" alt="MatHeat Heatmap Preview" class="preview">
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature">
+                <h3>Data Upload</h3>
+                <p>Supports multiple formats: CSV, TSV, XLSX, H5/HDF5, and JSON.</p>
+            </div>
+            <div class="feature">
+                <h3>Advanced Clustering</h3>
+                <p>Apply KMeans or UMAP for insightful data grouping.</p>
+            </div>
+            <div class="feature">
+                <h3>Pathway Analysis</h3>
+                <p>Perform Reactome enrichment analysis on your gene sets.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed by <a href="https://scholar.google.com/citations?user=pOLJKt4AAAAJ&hl=en" target="_blank">Seyyed Amin Seyyed Rezaei</a> | 
+        Contact: <a href="mailto:matheat.biology@gmail.com">matheat.biology@gmail.com</a></p>
+    </footer>
+</body>
+</html>
