@@ -1,155 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="MatHeat: Generate advanced gene expression heatmaps with clustering and Reactome pathway analysis. A bioinformatics tool by Seyyed Amin Seyyed Rezaei.">
-    <meta name="keywords" content="MatHeat, gene expression, heatmap generator, bioinformatics, clustering, UMAP, KMeans, Reactome, Python">
-    <meta name="author" content="Seyyed Amin Seyyed Rezaei">
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="MatHeat: Gene Expression Heatmap Generator">
-    <meta property="og:description" content="Upload your gene expression data and create interactive heatmaps with advanced bioinformatics tools.">
-    <meta property="og:image" content="https://via.placeholder.com/800x400.png?text=MatHeat+Preview">
-    <meta property="og:url" content="https://yourusername.github.io/matheat-landing">
-    <meta property="og:type" content="website">
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MatHeat: Gene Expression Heatmap Generator">
-    <meta name="twitter:description" content="Explore gene expression data with MatHeat's cutting-edge tools.">
-    <meta name="twitter:image" content="https://via.placeholder.com/800x400.png?text=MatHeat+Preview">
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P8FDLQQB');</script>
-    <!-- End Google Tag Manager -->
-    <title>MatHeat: Gene Expression Heatmap Generator</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: center;
-        }
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #963429;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #c0392b;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 2rem 0;
-        }
-        .feature {
-            flex: 1;
-            min-width: 250px;
-            margin: 1rem;
-            padding: 1rem;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .feature h3 {
-            color: #2c3e50;
-        }
-        img.preview {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-        }
-        footer a {
-            color: #e74c3c;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MatHeat | The Ultimate Gene Expression Heatmap Generator</title>
+  <meta name="description" content="MatHeat transforms your gene expression data into stunning interactive heatmaps with advanced clustering, UMAP/KMeans, and Reactome pathway analysis. Elevate your bioinformatics research with our cutting-edge tool.">
+  <meta name="keywords" content="MatHeat, gene expression, heatmap generator, bioinformatics, interactive heatmap, genetic data visualization, clustering, UMAP, KMeans, Reactome, pathway analysis, gene analysis">
+  <meta name="author" content="Seyyed Amin Seyyed Rezaei">
+  <meta name="robots" content="index, follow">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <link rel="canonical" href="https://yourusername.github.io/matheat-landing">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="MatHeat | The Ultimate Gene Expression Heatmap Generator">
+  <meta property="og:description" content="Transform your gene expression data into interactive, visually stunning heatmaps with advanced clustering and pathway analysis. Discover the pinnacle of genetic data visualization with MatHeat.">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=MatHeat+Preview">
+  <meta property="og:url" content="https://yourusername.github.io/matheat-landing">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MatHeat">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MatHeat | The Ultimate Gene Expression Heatmap Generator">
+  <meta name="twitter:description" content="Interactive, visually stunning gene expression heatmaps with advanced clustering and Reactome pathway analysis.">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=MatHeat+Preview">
+  <meta name="twitter:site" content="@MatHeat">
+  <meta name="twitter:creator" content="@MatHeat">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MatHeat",
+    "url": "https://yourusername.github.io/matheat-landing",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://yourusername.github.io/matheat-landing/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #f0f2f5; color: #333; overflow-x: hidden; }
+    
+    /* Navigation with Hamburger */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: rgba(44, 62, 80, 0.9);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      transition: background 0.3s;
+    }
+    nav:hover { background: rgba(44, 62, 80, 1); }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li { margin-left: 2rem; }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover { color: #e74c3c; }
+    
+    /* Hero Section with Genetic Background Video */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top: 50%; left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -2;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-align: center;
+      padding: 0 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeIn 2s ease-out;
+    }
+    .hero-content h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .hero-content .btn {
+      padding: 1rem 2.5rem;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .hero-content .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Main Sections */
+    main { margin-top: 80px; }
+    .section {
+      padding: 6rem 2rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section:nth-of-type(even) { background: #f9f9f9; }
+    .section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .feature {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .feature h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .feature p {
+      font-size: 1rem;
+      color: #666;
+    }
+    
+    /* Preview Image */
+    .preview {
+      width: 100%;
+      max-width: 1000px;
+      margin: 3rem auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer a {
+      color: #e74c3c;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    
+    /* Scroll-to-Top Button */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #e74c3c;
+      color: #fff;
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: opacity 0.3s;
+      z-index: 100;
+    }
+    #scrollTopBtn:hover { opacity: 0.8; }
+    
+    /* Responsive Navigation */
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav ul { 
+        display: none; 
+        flex-direction: column; 
+        width: 100%;
+        background: rgba(44, 62, 80, 0.9);
+      }
+      nav ul li { margin: 1rem 0; }
+      nav ul.active { display: flex; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .hero-content p { font-size: 1.2rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8FDLQQB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <header>
-        <h1>MatHeat</h1>
-        <p>Advanced Gene Expression Heatmap Generator</p>
-    </header>
-
-    <div class="container">
-        <p>
-            Welcome to MatHeat, a cutting-edge bioinformatics tool developed by Seyyed Amin Seyyed Rezaei. 
-            Upload your gene expression data (CSV, TSV, XLSX, H5/HDF5, JSON) and explore interactive heatmaps 
-            with clustering (KMeans, UMAP) and Reactome pathway analysis.
-        </p>
-        <a href="https://matheat.streamlit.app" target="_blank" class="btn">Launch MatHeat App</a>
-
-        <!-- Preview Image -->
-        <img src="https://via.placeholder.com/800x400.png?text=MatHeat+Heatmap+Preview" alt="MatHeat Heatmap Preview" class="preview">
-
-        <!-- Features Section -->
-        <div class="features">
-            <div class="feature">
-                <h3>Data Upload</h3>
-                <p>Supports multiple formats: CSV, TSV, XLSX, H5/HDF5, and JSON.</p>
-            </div>
-            <div class="feature">
-                <h3>Advanced Clustering</h3>
-                <p>Apply KMeans or UMAP for insightful data grouping.</p>
-            </div>
-            <div class="feature">
-                <h3>Pathway Analysis</h3>
-                <p>Perform Reactome enrichment analysis on your gene sets.</p>
-            </div>
-        </div>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8FDLQQB" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#home" class="logo">MatHeat</a>
+      <span class="menu-toggle" id="menuToggle">&#9776;</span>
+      <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-
-    <footer>
-        <p>Developed by <a href="https://scholar.google.com/citations?user=pOLJKt4AAAAJ&hl=en" target="_blank">Seyyed Amin Seyyed Rezaei</a> | 
-        Contact: <a href="mailto:matheat.biology@gmail.com">matheat.biology@gmail.com</a></p>
-    </footer>
+  </nav>
+  
+  <!-- Hero Section with Genetic Background Video -->
+  <section class="hero" id="home">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/3191574/3191574-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>MatHeat</h1>
+      <p>Transform Your Gene Expression Data into Stunning Interactive Heatmaps</p>
+      <a href="https://matheat.streamlit.app" class="btn" target="_blank">Launch the App</a>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Features Section -->
+    <section class="section" id="features">
+      <h2>Features</h2>
+      <p>Experience the pinnacle of bioinformatics tools.</p>
+      <div class="features">
+        <div class="feature">
+          <h3>Multi-Format Data Upload</h3>
+          <p>Seamlessly integrate CSV, TSV, XLSX, H5/HDF5, and JSON formats.</p>
+        </div>
+        <div class="feature">
+          <h3>Advanced Clustering</h3>
+          <p>Utilize KMeans and UMAP to reveal intricate gene expression patterns.</p>
+        </div>
+        <div class="feature">
+          <h3>Pathway Analysis</h3>
+          <p>Conduct Reactome enrichment for profound biological insights.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="section" id="about">
+      <h2>About MatHeat</h2>
+      <p>MatHeat is a state-of-the-art bioinformatics tool developed by Seyyed Amin Seyyed Rezaei. Our mission is to simplify gene expression analysis by transforming complex data into interactive, visually stunning heatmaps enriched with advanced clustering and pathway analysis.</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Questions or feedback? We’d love to hear from you!</p>
+      <p>Email: <a href="mailto:matheat.biology@gmail.com">matheat.biology@gmail.com</a></p>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>Developed by <a href="https://scholar.google.com/citations?user=pOLJKt4AAAAJ&hl=en" target="_blank">Seyyed Amin Seyyed Rezaei</a></p>
+  </footer>
+  
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn" onclick="scrollToTop()">&#8679;</button>
+  
+  <script>
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+    
+    // IntersectionObserver for Section Fade-Ins
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    sections.forEach(section => observer.observe(section));
+    
+    // Scroll-to-Top Button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    function scrollToTop() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  </script>
 </body>
 </html>
