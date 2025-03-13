@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://github.com/Amin-mat/matheat-landing/blob/main/sitemap.xml
